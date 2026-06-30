@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guru Guru Games — Spin Into Fun!</title>
+  <meta name="description" content="Guru Guru Games — an indie game studio making colorful, fun, swirl-tastic games you can't put down." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Floating background blobs -->
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <span class="blob blob--3"></span>
+  </div>
+
+  <!-- Navbar -->
+  <header class="nav" id="top">
+    <a href="#top" class="nav__brand">
+      <img src="assets/logo.png" alt="Guru Guru Games logo" class="nav__logo" />
+      <span class="nav__name">Guru Guru <span class="nav__name-accent">Games</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#games">Games</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="btn btn--ghost btn--sm">Say Hi 👋</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="hero__logo-wrap">
+        <img src="assets/logo.png" alt="Guru Guru Games" class="hero__logo" />
+      </div>
+      <h1 class="hero__title">
+        We make games that go
+        <span class="hero__spin">guru&nbsp;guru</span>
+        in your head!
+      </h1>
+      <p class="hero__subtitle">
+        An indie studio cooking up colorful, joyful, can't-stop-playing experiences.
+        Big fun, no boring bits. 🎮✨
+      </p>
+      <div class="hero__cta">
+        <a href="#games" class="btn btn--primary">Play Our Games</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat"><span class="stat__num" data-count="1">0</span><span class="stat__label">Games Shipped</span></div>
+        <!-- <div class="stat"><span class="stat__num" data-count="2">0</span><span class="stat__label">Million Players</span></div> -->
+        <div class="stat"><span class="stat__num" data-count="100">0</span><span class="stat__label">% Pure Fun</span></div>
+      </div>
+    </section>
+
+    <!-- Games -->
+    <section class="section" id="games">
+      <div class="section__head">
+        <h2 class="section__title">Our Games <span class="emoji">🕹️</span></h2>
+        <p class="section__sub">Pick your poison. They're all delightfully addictive.</p>
+      </div>
+      <div class="cards">
+        <article class="card" style="--card-c1:#34d399;--card-c2:#22d3ee;">
+          <div class="card__art">👾</div>
+          <h3 class="card__title">Sector FX: Climb</h3>
+          <p class="card__text">Couch co-op chaos with friends. Snacks not included, laughs guaranteed.</p>
+          <span class="card__tag">ARPG Rougelike</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="about__grid">
+        <div class="about__art" aria-hidden="true">
+          <div class="about__spinner">🌀</div>
+        </div>
+        <div class="about__body">
+          <h2 class="section__title">Who's behind the swirl? <span class="emoji">💜</span></h2>
+          <p>We're a tiny team of big kids who believe games should feel like recess. No fluff, no
+            grind-for-grind's-sake — just clever, colorful fun that makes you smile.</p>
+          <p>Guru Guru means "round and round" — and that's exactly what our games do to your brain.
+            In the best way.</p>
+          <ul class="about__list">
+            <li>🎨 Hand-crafted, bursting with color</li>
+            <li>⚡ Pick-up-and-play in seconds</li>
+            <li>🌍 Made for everyone, everywhere</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <img src="assets/logo.png" alt="" class="footer__logo" aria-hidden="true" />
+    <p class="footer__name">Guru Guru Games</p>
+    <p class="footer__copy">Made with 💜 and a lot of caffeine. © <span id="year"></span> Guru Guru Games.</p>
+    <div class="footer__social">
+      <a href="#" aria-label="Twitter">🐦</a>
+      <a href="#" aria-label="Discord">💬</a>
+      <a href="#" aria-label="YouTube">📺</a>
+      <a href="#" aria-label="Itch.io">🎮</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
