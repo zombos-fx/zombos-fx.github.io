@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://guruguru.my.id/sitemap.xml
