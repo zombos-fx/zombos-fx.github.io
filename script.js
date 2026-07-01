@@ -28,14 +28,18 @@ revealTargets.forEach((el) => revealObserver.observe(el));
 const counters = document.querySelectorAll(".stat__num");
 
 function animateCount(el) {
+  // Skip non-numeric stats (e.g. "∞") — nothing to count up to.
+  if (el.dataset.count === undefined) return;
+
   const target = Number(el.dataset.count) || 0;
+  const suffix = el.dataset.suffix || "";
   const duration = 1400;
   const start = performance.now();
 
   function tick(now) {
     const progress = Math.min((now - start) / duration, 1);
     const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-    el.textContent = Math.round(eased * target).toLocaleString();
+    el.textContent = Math.round(eased * target).toLocaleString() + suffix;
     if (progress < 1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
@@ -53,29 +57,6 @@ const counterObserver = new IntersectionObserver(
   { threshold: 0.6 }
 );
 counters.forEach((el) => counterObserver.observe(el));
-
-// ---------- Contact form (front-end only) ----------
-const form = document.getElementById("contactForm");
-const note = document.getElementById("formNote");
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const name = form.name.value.trim();
-  const email = form.email.value.trim();
-  const message = form.message.value.trim();
-  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-  if (!name || !message || !emailOk) {
-    note.textContent = "Oops! Fill in every field with a valid email. 🙃";
-    note.className = "contact__note err";
-    return;
-  }
-
-  note.textContent = `Thanks, ${name}! We'll spin back to you soon. 🌀`;
-  note.className = "contact__note ok";
-  form.reset();
-});
 
 // ---------- Tiny parallax on hero logo ----------
 const heroLogo = document.querySelector(".hero__logo");
